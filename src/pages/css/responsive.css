@@ -1,0 +1,47 @@
+@media all and (max-width: 800px) { 
+  header h2 {
+    font-size: 48px;
+    padding-top: 30px;
+  }
+
+  header h4 {
+    font-size: 36px;
+    padding-bottom: 10px;
+  }
+  
+  main option {
+    font-size: 12px;
+    padding: 2px; 
+  }
+  
+  table {
+    display: flex;
+    flex-direction: column;
+    padding: auto;
+
+    text-align: center;
+    align-items: center;
+  }
+  table td {
+    padding: 4px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  table h2 {
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  table p {
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+
+  footer p {
+    font-size: 14px; 
+  }  
+}
