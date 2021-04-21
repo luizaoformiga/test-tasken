@@ -110,42 +110,40 @@ export const Table = styled.table`
     background-color: #f8f8f8;
   }
 
-@media (max-width: 767px) { 
+  @media (max-width: 767px) { 
     display: block;
     position: relative;
     width: 100%;
 
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    td,
+    th {
+      height: 35px;
+    }
+
+    thead {
+      float: left;
+    }
+
+    tbody {
+      width: auto;
+      position: relative;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+    }
+
+    tbody tr {
+      display: inline-block;
+    }
   }
-
-  td,
-  th {
-    height: 35px;
-  }
-
-  thead {
-    float: left;
-  }
-
-  tbody {
-    width: auto;
-    position: relative;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-  }
-
-  tbody tr {
-    display: inline-block;
-  }
-}
-
-
 `;
   
 export const Footer = styled.footer`
