@@ -2,21 +2,14 @@ import { gql } from '@apollo/client';
 
 const countryQuery = gql`
   query {
-    Country {
-      _id
+    countries {
       name
-      capital 
-      population
-      area
-      flag {
-        country {
-          _id
-          name
-        }
-      }
-      subregion {
+      capital
+      emoji
+      languages {
         name
       }
+      currency
     } 
   }
 `;

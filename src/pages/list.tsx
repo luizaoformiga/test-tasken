@@ -1,8 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { useEffect, useState } from "react";
 import countryQuery from "../graphql/countryQuery";
-import "./css/style.css";
-import "./css/responsive.css";
+import { CreateGobalStyles, Header, Main, Footer, Table } from './style';
 
 export default function List() {
   const [select, setSelect] = useState<any>();
@@ -15,17 +14,18 @@ export default function List() {
 
   useEffect(() => {
     if (data) {
-      setContry(data.Country);
+      setContry(data.countries);
     }
   }, [data, loading]);
 
   return (
     <div>
-      <header>
+      <CreateGobalStyles/>
+      <Header>
         <h2>API GraphQL</h2>
         <h4>Search your country data <br/> here</h4>
-      </header>
-      <main>
+      </Header>
+      <Main>
         <select onChange={handleInputName}>
         {country ? (
           country.map((item: any, index: any) => (
@@ -37,25 +37,25 @@ export default function List() {
           <option>loading...</option>
         )}
       </select>
-      </main>
-      <main>
-      <table>
+      </Main>
+      <Main>
+      <Table>
         <thead>
           <tr>
             <td>
+              <h2>Flag</h2>
+            </td>
+            <td>
               <h2>Country</h2>
-            </td>
-            <td>
-              <h2>Area</h2>
-            </td>
-            <td>
-              <h2>Population</h2>
             </td>
             <td>
               <h2>Capital</h2>
             </td>
             <td>
-              <h2>Subregion</h2>
+              <h2>Language</h2>
+            </td>
+            <td>
+              <h2>Currency</h2>
             </td>
           </tr>
         </thead>
@@ -64,29 +64,29 @@ export default function List() {
             ? select.map((item: any, index: any) => (
                 <tr key={index}>
                   <td>
+                    <p>{item.emoji}</p>
+                  </td>
+                  <td>
                     <p>{item.name}</p>
-                  </td>
-                  <td>
-                    <p>{item.area}</p>
-                  </td>
-                  <td>
-                    <p>{item.population}</p>
                   </td>
                   <td>
                     <p>{item.capital}</p>
                   </td>
                   <td>
-                    <p>{item.subregion.name}</p>
+                    <p>{item.languages.map((language: any) => <>{language.name}</>)}</p>
+                  </td>
+                  <td>
+                    <p>{item.currency}</p>
                   </td>
                 </tr>
               ))
             : null}
         </tbody>
-      </table>
-      </main>
-      <footer>
+      </Table>
+      </Main>
+      <Footer>
         <p>Thanks for using this system!</p>
-      </footer>
+      </Footer>
     </div>
   );
 }

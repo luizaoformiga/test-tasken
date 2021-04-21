@@ -1,11 +1,8 @@
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
-
-const httpLink = new HttpLink({
-  uri: 'https://countries-274616.ew.r.appspot.com.'
-})
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({ 
-  link: httpLink, cache: new InMemoryCache() 
+  uri: 'https://countries.trevorblades.com/', 
+  cache: new InMemoryCache() 
 })
 
 export default client;
