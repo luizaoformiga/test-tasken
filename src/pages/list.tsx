@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import countryQuery from "../graphql/countryQuery";
 import { CreateGobalStyles, Header, Main, Footer, Table } from './style';
 
@@ -73,7 +73,9 @@ export default function List() {
                     <p>{item.capital}</p>
                   </td>
                   <td>
-                    <p>{item.languages.map((language: any) => <>{language.name}</>)}</p>
+                    <p>{item.languages.map((language: any, index: any) => (
+                      <Fragment key={index}>{language.name}</Fragment>
+                    ))}</p>
                   </td>
                   <td>
                     <p>{item.currency}</p>

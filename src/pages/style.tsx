@@ -90,6 +90,10 @@ export const Table = styled.table`
     color: #2D044E;
   }
 
+  p {
+    padding-right: 3.3px;
+  }
+
   @media all and (max-width: 800px) {
       display: flex;
       flex-direction: column;
