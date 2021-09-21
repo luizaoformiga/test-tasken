@@ -1,11 +1,13 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import List from '../pages/list';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import List from "../pages/list";
 
-export default function Router() {
-    return(
-        <BrowserRouter>
-          <Switch />
-            <Route exact path="/" component={List}/>
-        </BrowserRouter>
-    )
-}
+const Router: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <Switch />
+      <Route exact path="/" component={List} />
+    </BrowserRouter>
+  );
+};
+
+export default Router;

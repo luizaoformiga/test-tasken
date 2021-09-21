@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 const countryQuery = gql`
   query {
@@ -10,7 +10,7 @@ const countryQuery = gql`
         name
       }
       currency
-    } 
+    }
   }
 `;
 
